@@ -1,4 +1,4 @@
-{% set version = "0.1.3" %}
+{% set version = "0.1.4" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/DataEditR_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/DataEditR/DataEditR_{{ version }}.tar.gz
-  sha256: e412cb1a1162e81b46d50e44988f54ebdfd2cc7078302a67679524183f342c68
+  sha256: fa02c80e93715400e7310c5f39dea0b00818d6f7272cecf492bfd9514850796a
 
 build:
   merge_build_host: true  # [win]
