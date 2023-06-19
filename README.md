@@ -1,11 +1,11 @@
-About r-dataeditr
-=================
+About r-dataeditr-feedstock
+===========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-dataeditr-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/DillonHammill/DataEditR
 
 Package license: GPL-2.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-dataeditr-feedstock/blob/main/LICENSE.txt)
 
 Summary: An interactive editor built on 'rhandsontable' to allow the interactive viewing, entering, filtering and editing of data in R <https://dillonhammill.github.io/DataEditR/>.
 
