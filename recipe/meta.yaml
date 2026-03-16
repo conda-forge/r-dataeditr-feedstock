@@ -1,4 +1,4 @@
-{% set version = "0.1.5" %}
+{% set version = "1.0.0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,14 +9,18 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/DataEditR_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/DataEditR/DataEditR_{{ version }}.tar.gz
-  sha256: 8300f76a95dcbd99357eb2b0f80ae9c6a43a52345a4aca6015242a354d7e924f
+  sha256: e9802a42e43f10091e18ec75c044a7ab946e7ca67c92babbe8afa2feaa7a3e3c
 
 build:
-  number: 4
+  number: 0
   noarch: generic
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
 
 requirements:
   build:
@@ -24,24 +28,24 @@ requirements:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
+    - r-bslib
     - r-htmltools
     - r-miniui
-    - r-rhandsontable
+    - r-rhandsontable >=0.3.8
     - r-rstudioapi
     - r-shiny >=1.5.0
     - r-shinybs
     - r-shinyjs
-    - r-shinythemes
   run:
     - r-base
+    - r-bslib
     - r-htmltools
     - r-miniui
-    - r-rhandsontable
+    - r-rhandsontable >=0.3.8
     - r-rstudioapi
     - r-shiny >=1.5.0
     - r-shinybs
     - r-shinyjs
-    - r-shinythemes
 
 test:
   commands:
